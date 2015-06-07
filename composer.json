@@ -1,5 +1,6 @@
 {
   "name": "douglasmariz/pre-commit-git",
+  "type": "library",
   "description": "Repositorio para evitar commits de arquivos com funções (dump, var_dump, die, print_r, etc)",
   "authors": [
     {
@@ -10,6 +11,7 @@
   "autoload": {
     "files": [ ".git/hooks/commit-msg" ],
     "files": [ ".git/hooks/pre-commit" ],
-    "psr-4": {".git/hooks": ""}
+    "psr-4": { ".git\\hooks\\": "" }
   }
 }
+
