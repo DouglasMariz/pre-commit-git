@@ -1,5 +1,6 @@
 {
-  "name": "Douglas Mariz/Siscon",
+  "name": "pre-commit-git",
+  "description": "Repositorio para evitar commits de arquivos com funções (dump, var_dump, die, print_r, etc)",
   "authors": [
     {
       "name": "Douglas Mariz",
@@ -10,12 +11,5 @@
     "psr-0": {
       ".git/hooks/": ""
     }
-  },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git@github.com:DouglasMariz/pre-commit_git.git"
-    }
-  ]
+  }
 }
-
