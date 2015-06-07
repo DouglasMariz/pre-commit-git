@@ -8,10 +8,10 @@
       "email": "douglasviviane@gmail.com"
     }
   ],
-  "autoload": {
-    "files": [ ".git/hooks/commit-msg" ],
-    "files": [ ".git/hooks/pre-commit" ],
-    "psr-4": { ".git\\hooks\\": "" }
+  "scripts": {
+    "post-update-cmd": [
+      "cp commit-msg pre-commit .git/hooks/"
+    ]
   }
 }
 
