@@ -1,0 +1,59 @@
+#!/usr/bin/php
+<?php
+ 
+$message = file_get_contents($argv[1]);
+$co_error = 0;
+
+if (!checkMessage($message)) { 
+	$co_error = 100; 
+	$ds_return ='Comentario Reprovado';
+    $error_message = "Sintaxe: ([(BRANCH|TAG|FIX|UPDATE|DELETE|ADD|MERGE)]\n";
+    $error_message .= " \s\#(\d+)}\s(.|\s)*)";
+}
+
+if ($co_error != 0) {
+    fwrite(STDERR, "------- \n");
+    fwrite(STDERR, utf8_encode(" **** Erro $co_error: $ds_return **** \n"));
+    fwrite(STDERR, utf8_encode(" **** ".fortuneCookie()." **** \n"));
+    if ($error_message != "") {
+        $error_message=explode("\n",$error_message);
+        foreach ($error_message as $message) { 
+            fwrite(STDERR, utf8_encode(" **** $message **** \n"));
+        }
+    }
+    fwrite(STDERR, "------- \n");
+    exit (1);
+}
+exit(0); // deu tudo certo
+ 
+function checkMessage($message)
+{
+    # if (strlen($message) < 10) {
+    #     echo 'A commit must be annotated by a prefixed message of at least ten characters';
+    #     exit(1);
+    # }
+
+    $comentario = trim($message);
+    return preg_match('/\s*\[(BRANCH|TAG|FIX|UPDATE|DELETE|ADD|MERGE)\]\s\#(\d+)\s(.|\s)*/', $comentario);
+}
+
+function fortuneCookie() {
+    $cookiejar = array(
+    	'Teje repreendido!', 
+    	'Commit bloqueado por excesso de empadadas.', 
+    	'YOU SHALL NOT... PASS!', 
+    	'Trabalha direito senao o svn te denuncia', 
+    	'Ah se num fosse esse pre-commit hein?', 
+    	'Mais umas dessas e te passam pra o setor de design. (Se voce for um designer, ignore esse erro)', 
+    	'Acorda!! Bebeu foi?', 
+    	'Servidor blindado anti-caiada.', 
+    	'No cookie for you mister.', 
+    	'Errado.. de novo.', 
+    	'Nem a pau que eu deixo uma coisa feia dessa passar.', 
+    	'Bora cidadao, tenta de novo.', 
+    	'Tem que ajeitar isso. Ta pronto?', 
+    	'Ei bicho!? Ta empadando?'
+	);
+    $cookienumber = mt_rand(0,sizeof($cookiejar)-1);
+    return $cookiejar[$cookienumber];
+}
