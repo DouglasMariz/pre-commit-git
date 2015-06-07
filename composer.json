@@ -10,5 +10,12 @@
     "psr-0": {
       ".git/hooks/": ""
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:DouglasMariz/pre-commit_git.git"
+    }
+  ]
 }
+
