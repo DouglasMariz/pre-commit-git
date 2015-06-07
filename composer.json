@@ -1,0 +1,14 @@
+{
+  "name": "Douglas Mariz/Siscon",
+  "authors": [
+    {
+      "name": "Douglas Mariz",
+      "email": "douglasviviane@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      ".git/hooks/": ""
+    }
+  }
+}
