@@ -8,8 +8,8 @@
     }
   ],
   "autoload": {
-    "psr-0": {
-      ".git/hooks/": ""
-    }
+    "files": [ ".git/hooks/commit-msg" ],
+    "files": [ ".git/hooks/pre-commit" ],
+    "psr-4": {".git/hooks/": ""}
   }
 }
