@@ -1,5 +1,5 @@
 {
-  "name": "pre-commit-git",
+  "name": "DouglasMariz/pre-commit-git",
   "description": "Repositorio para evitar commits de arquivos com funções (dump, var_dump, die, print_r, etc)",
   "authors": [
     {
