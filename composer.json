@@ -1,7 +1,7 @@
 {
   "name": "douglasmariz/pre-commit-git",
   "type": "library",
-  "description": "Repositorio para evitar commits de arquivos com funções (dump, var_dump, die, print_r, etc)",
+  "description": "GIT pre-commit hook para verificar no código a existência de certas palavras, frases ou funções (dump, var_dump, die, print_r, etc) antes de ser comitado.",
   "authors": [
     {
       "name": "Douglas Mariz",
@@ -14,4 +14,3 @@
     ]
   }
 }
-
